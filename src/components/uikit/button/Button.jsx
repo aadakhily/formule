@@ -1,10 +1,25 @@
 import { cva } from 'class-variance-authority'
+// 
+const button = cva(['rounded-xl', 'py-2', 'px-4', 'text-center', 'font-semibold'], {
+    variants: {
+        variant: {
+            primary: ['bg-primary', 'text-white'],
+            secondary: []
+        },
+        size: {
+            sm: [],
+            md: ['text-sm']
+        }
+    },
+    defaultVariants: {
+        variant: 'primary',
+        size: 'md'
+    }
+})
 
-// const button = cva() 
-
-function Button({ children }) {
+function Button({ children, variant }) {
     return (
-        <Button >{children}</Button>
+        <button className={button({ variant })}>{children}</button>
     )
 }
 

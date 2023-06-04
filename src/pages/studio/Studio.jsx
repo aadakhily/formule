@@ -1,6 +1,9 @@
 
+// layout
 import Header from '../../components/studio/layout/Header'
 import SideBar from '../../components/studio/layout/SideBar'
+
+import StudioEditor from '../../components/studio/editor/Editor'
 
 function Studio() {
     return (
@@ -11,7 +14,7 @@ function Studio() {
                     left
                 </SideBar>
                 <main className='bg-gray-200 w-full h-[92vh]'>
-                    fasdfasd
+                    <StudioEditor />
                 </main>
                 <SideBar >
                     rigth
