@@ -9,11 +9,13 @@ import ConfigToolbar from "../../components/studio/editor/toolbars/ConfigToolbar
 
 import { EDITOR_NODES } from "../../components/studio/editor/nodes";
 
+import NodeWrapper from "../../components/studio/editor/nodes/NodeWrapper";
+
 function Studio() {
   const data = localStorage.getItem("data");
 
   return (
-    <Editor resolver={EDITOR_NODES} indicator={{ success: "#2680eb" }}>
+    <Editor resolver={EDITOR_NODES} indicator={{ success: "#2680eb" }} onRender={NodeWrapper}>
       <div>
         <Header />
 
@@ -48,6 +50,7 @@ function Studio() {
           <ConfigToolbar />
         </div>
       </div>
+      <div className="page-container"></div>
     </Editor>
   );
 }
