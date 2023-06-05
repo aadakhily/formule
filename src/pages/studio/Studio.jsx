@@ -10,9 +10,10 @@ import ConfigToolbar from "../../components/studio/editor/toolbars/ConfigToolbar
 import { EDITOR_NODES } from "../../components/studio/editor/nodes";
 
 import NodeWrapper from "../../components/studio/editor/nodes/NodeWrapper";
+import BlankLayout from "../../components/studio/editor/nodes/layouts/BlankLayout";
 
 function Studio() {
-  const data = localStorage.getItem("data");
+  const data = localStorage.getItem("data") || undefined;
 
   return (
     <Editor resolver={EDITOR_NODES} indicator={{ success: "#2680eb" }} onRender={NodeWrapper}>
@@ -26,17 +27,21 @@ function Studio() {
             <TransformWrapper
               minScale={0.05}
               limitToBounds={false}
+              doubleClick={{ disabled: true }}
               wheel={{ activationKeys: ["Control"] }}
               panning={{ activationKeys: [" "] }}
             >
-              <TransformComponent contentStyle={{ width: "100%" }} wrapperStyle={{ width: "100%" }}>
-                <Frame data={data}>
+              <TransformComponent
+                contentStyle={{ width: "100%", height: "100%" }}
+                wrapperStyle={{ width: "100%", height: "100%" }}
+              >
+                <Frame>
                   <Element
                     canvas
                     is="main"
-                    className="w-full h-[92vh] p-20 pb-40 text-center text-2xl capitalize cursor-grab pointer-events-none"
+                    className="w-full h-[92vh] p-20 pb-40 text-center text-2xl"
                   >
-                    for start , drag a layout and drop here
+                    {/* <Element is={BlankLayout} canvas /> */}
                   </Element>
                 </Frame>
               </TransformComponent>
@@ -46,11 +51,9 @@ function Studio() {
               </div>
             </TransformWrapper>
           </div>
-
           <ConfigToolbar />
         </div>
       </div>
-      <div className="page-container"></div>
     </Editor>
   );
 }

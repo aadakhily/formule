@@ -9,7 +9,7 @@ import { AccordionRoot } from "../../../../uikit/accordion/Accordion";
 function NodesToolbar() {
   return (
     <SideBar>
-      <AccordionRoot type="single" collapsible>
+      <AccordionRoot type="single" defaultValue="layout-section" collapsible>
         <LatoytsSection />
       </AccordionRoot>
     </SideBar>

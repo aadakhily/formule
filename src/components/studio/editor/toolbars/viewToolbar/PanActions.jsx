@@ -26,7 +26,7 @@ function CursorActions() {
       <button
         onClick={changeToPaning}
         className={`flex items-center justify-center bg-gray-100 rounded-xl mx-[6px] text-gray-700 w-8 h-8 hover:text-gray-900 hover:bg-gray-200 ${
-          isPaning ? "!bg-gray-600 !text-gray-50" : ""
+          isPaning ? "!bg-primary !text-gray-50" : ""
         }`}
       >
         <HandIcon width={16} height={16} />
@@ -35,7 +35,7 @@ function CursorActions() {
       <button
         onClick={changeToSelecting}
         className={`flex items-center justify-center bg-gray-100 rounded-xl mx-[6px] text-gray-700 w-8 h-8 hover:text-gray-900 hover:bg-gray-200 ${
-          !isPaning ? "!bg-gray-600 !text-gray-50" : ""
+          !isPaning ? "!bg-primary !text-gray-50" : ""
         }`}
       >
         <CursorArrowIcon width={16} height={16} />
