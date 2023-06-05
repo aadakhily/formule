@@ -6,12 +6,12 @@ import {
   AccordionItem,
 } from "../../../../../uikit/accordion/Accordion";
 
-import GridNodeType from "../nodeTypes/GridNodeType";
-import VerticalNodeType from "../nodeTypes/VerticalNodeType";
-import HorizontalNodeType from "../nodeTypes/HorizontalNodeType";
-import BlankNodeType from "../nodeTypes/BlankNodeType";
+import GridNodeType from "../nodeTypes/layout/GridNodeType";
+import VerticalNodeType from "../nodeTypes/layout/VerticalNodeType";
+import HorizontalNodeType from "../nodeTypes/layout/HorizontalNodeType";
+import BlankNodeType from "../nodeTypes/layout/BlankNodeType";
 
-function LatoytsSection() {
+function LayoutsSection() {
   return (
     <AccordionItem value="layout-section">
       <AccordionTrigger>Layouts</AccordionTrigger>
@@ -27,4 +27,4 @@ function LatoytsSection() {
   );
 }
 
-export default LatoytsSection;
+export default LayoutsSection;

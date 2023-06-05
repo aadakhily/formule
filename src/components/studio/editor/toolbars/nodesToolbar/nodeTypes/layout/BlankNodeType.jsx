@@ -1,7 +1,7 @@
 import React from "react";
-import BaseNode from "./BaseNode";
+import BaseNode from "../BaseNode";
 import { BoxIcon } from "@radix-ui/react-icons";
-import BlankLayout from "../../../nodes/layouts/BlankLayout";
+import BlankLayout from "../../../../nodes/layouts/BlankLayout";
 
 function BlankNodeType() {
   return (
