@@ -1,20 +1,19 @@
 import { Editor, Element, Frame } from "@craftjs/core";
-import PerfectScrollbar from "react-perfect-scrollbar";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 // layout
 import Header from "../../components/studio/layout/Header";
+import ViewToolbar from "../../components/studio/editor/toolbars/viewToolbar";
 import NodesToolbar from "../../components/studio/editor/toolbars/nodesToolbar/NodesToolbar";
 import ConfigToolbar from "../../components/studio/editor/toolbars/ConfigToolbar/ConfigToolbar";
-import { EDITOR_NODES } from "../../components/studio/editor/nodes";
 
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import ViewToolbar from "../../components/studio/editor/toolbars/viewToolbar";
+import { EDITOR_NODES } from "../../components/studio/editor/nodes";
 
 function Studio() {
   const data = localStorage.getItem("data");
 
   return (
-    <Editor resolver={EDITOR_NODES}>
+    <Editor resolver={EDITOR_NODES} indicator={{ success: "#2680eb" }}>
       <div>
         <Header />
 
@@ -24,6 +23,7 @@ function Studio() {
           <div id="mainFrame" className="w-full overflow-auto bg-gray-200 relative">
             <TransformWrapper
               minScale={0.05}
+              limitToBounds={false}
               wheel={{ activationKeys: ["Control"] }}
               panning={{ activationKeys: [" "] }}
             >
@@ -32,7 +32,7 @@ function Studio() {
                   <Element
                     canvas
                     is="main"
-                    className="w-full h-[92vh] p-20 text-center text-2xl capitalize cursor-grab pointer-events-none"
+                    className="w-full h-[92vh] p-20 pb-40 text-center text-2xl capitalize cursor-grab pointer-events-none"
                   >
                     for start , drag a layout and drop here
                   </Element>

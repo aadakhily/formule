@@ -1,1 +1,5 @@
 @import "./tailwind.css";
+
+.craft-layer-node div {
+  border-radius: 8px !important;
+}

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#ff006e"
+        primary: "#2680eb"
       },
       keyframes: {
         slideDown: {
